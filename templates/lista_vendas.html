@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+        {% for item in lista_vendas%}
+
+            <div class="p3">
+                <p>Nome: {{item.Nome}}</p><br>
+                <p>Tipo: {{item.tipo}}</p><br>
+                <p>Cor: {{item.cor}}</p><br>
+                <p>Preço: {{item.preco}}</p><br>
+                <p>ID Vendas: {{item.id_vendas}}</p><br>
+                <p>ID Cliente: {{item.id_cliente}}</p><br>
+                <p>ID Produto: {{item.id_produto}}</p>
+
+            </div>
+
+        {% endfor%}
+
+{% endblock conteudo %}

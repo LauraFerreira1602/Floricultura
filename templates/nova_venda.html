@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-error">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form action="{{url_for('nova_venda')}}" method="POST">
+        <label> ID Cliente:</label>
+        <input type="number" name="form_id_cliente" >
+        <label> ID Produto:</label>
+        <input type="number" name="form_id_produto" >
+        <label> Nome:</label>
+        <input type="text" name="form_nome" >
+        <label> Tipo:</label>
+        <input type="text" name="form_tipo">
+        <label> Cor:</label>
+        <input type="text" name="form_cor">
+        <label> Preço:</label>
+        <input type="text" name="form_preco">
+        <button>Adicionar</button>
+        <button><p href ="{{url_for('lista_vendas')}}">Cancelar</p></button>
+    </form>
+
+{% endblock conteudo %}

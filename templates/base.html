@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <Link rel="stylesheet" href="/static/estrutura.css">
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <p>Floricultura Flor de Lis</p>
+    </header>
+
+    <nav>
+        <p>MENU</p>
+        <br>
+        <ul>
+            <li><a href="{{ url_for('novo_cliente') }}">Cadastro de Clientes</a></li><hr>
+            <li><a href="{{ url_for('lista_clientes') }}">Lista de Clientes</a></li><br>
+            <li><a href="{{ url_for('novo_produto') }}">Cadastro de Produtos</a></li><hr>
+            <li><a href="{{ url_for('lista_produtos') }}">Lista de Produtos</a></li><br>
+            <li><a href="{{ url_for('nova_venda') }}">Cadastro de Vendas</a></li><hr>
+            <li><a href="{{ url_for('lista_vendas') }}">Lista de Vendas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block conteudo %}
+
+        {% endblock conteudo %}
+    </main>
+
+</div>
+</body>
+</html>
